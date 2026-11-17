@@ -1,0 +1,23 @@
+# Example Fly.io config. Create the volume first:
+#   fly volumes create milap_data --size 1 --region bom
+app = "milap-api"
+primary_region = "bom"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[http_service]
+  internal_port = 4000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 1
+
+[[mounts]]
+  source = "milap_data"
+  destination = "/app/data"
+
+[env]
+  NODE_ENV = "production"
+  DATABASE_URL = "file:/app/data/milap.db"
+  UPLOAD_DIR = "/app/data/uploads"

@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: milap
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:api
+    envVars:
+      - key: NODE_VERSION
+        value: 22.21.0
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ALLOW_DEV_OTP
+        value: "true"
+      - key: ALLOW_DEMO_BILLING
+        value: "true"

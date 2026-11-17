@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.DS_Store
+.env
+*.log
+apps/api/data/
+apps/api/uploads/
+apps/web/dist/
+apps/web/android/
+apps/web/ios/
+*.db
+*.db-*

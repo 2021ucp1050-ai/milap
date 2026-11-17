@@ -1,0 +1,8 @@
+{
+  "appId": "com.milap.app",
+  "appName": "Milap",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}
